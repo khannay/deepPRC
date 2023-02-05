@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "deepPRC"
+  site-url: "https://khannay.github.io/deepPRC"
+  description: "Machine learning tools for the prediction of oscillator dynamics"
+  repo-branch: main
+  repo-url: "https://github.com/khannay/deepPRC"
