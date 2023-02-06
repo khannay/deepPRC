@@ -138,6 +138,9 @@ class SmallPerturbationModel(nn.Module):
     def update_coeff(self, coeffs, time_coeffs):
         self.forcing = torchcde.CubicSpline(coeffs, t=time_coeffs)
         
+    def to_phase(self, trajectory):
+        return trajectory[:,1]
+        
     def init_weights_zero(self, m):
         if isinstance(m, nn.Linear):
             torch.nn.init.zeros_(m.weight)
@@ -154,6 +157,7 @@ class SmallPerturbationModel(nn.Module):
 
     def to_dict(self) -> dict:
         return {name: param.data.item() for name, param in self.named_parameters()}
+    
 
 
 
