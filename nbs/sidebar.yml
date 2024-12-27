@@ -1,0 +1,7 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - 00_layers.ipynb
+      - 01_datatools.ipynb
+      - 02_learners.ipynb

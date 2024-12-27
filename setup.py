@@ -1,6 +1,9 @@
-from pkg_resources import parse_version
+import shlex
 from configparser import ConfigParser
-import setuptools, shlex
+
+import setuptools
+from pkg_resources import parse_version
+
 assert parse_version(setuptools.__version__)>=parse_version('36.2')
 
 # note: all settings are in settings.ini; edit there, not here
@@ -41,6 +44,7 @@ setuptools.setup(
     url = cfg['git_url'],
     packages = setuptools.find_packages(),
     include_package_data = True,
+    package_data={'deepPRC': ['prcdata/*.csv']},
     install_requires = requirements,
     extras_require={ 'dev': dev_requirements },
     dependency_links = cfg.get('dep_links','').split(),
